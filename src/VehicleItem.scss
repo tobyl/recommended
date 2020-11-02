@@ -1,0 +1,35 @@
+.VehicleItem {
+  .ToggleTitles {
+    span {
+      display: block;
+      width: 75px;
+      float: right;
+      font-size: 0.8rem;
+      text-align: center;
+    }
+  }
+}
+
+.SingleVehicle {
+  border-bottom: 1px solid #ccc;
+  padding-bottom: 5px;
+  margin-bottom: 5px;
+  .VehicleTitle {
+    float: left;
+    small {
+      display: block;
+    }
+  }
+  .Toggles {
+    float: right;
+    label {
+      display: inline-block;
+      width: 75px;
+      text-align: center;
+      padding-top: 10px;
+    }
+  }
+  &:last-child {
+    border: none;
+  }
+}

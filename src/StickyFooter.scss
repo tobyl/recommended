@@ -1,0 +1,19 @@
+@import './utils';
+
+.StickyFooter {
+  position: fixed;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  button {
+    padding: 0.5rem 1rem;
+    border-radius: 5px 5px 0 0;
+    border: none;
+    background: tint($primary, 30%);
+    color: #fff;
+    outline: none;
+    &:hover {
+      cursor: pointer;
+    }
+  }
+}

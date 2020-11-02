@@ -1,26 +1,133 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from 'react'
+import { isEqual } from 'lodash'
+import Coverages from './Coverages'
+import StickyHeader from './StickyHeader'
+import StickyFooter from './StickyFooter'
+import HomePrice from './HomePrice'
+import { Star, Logo } from './icons'
+import InovaLogo from './images/inova-logo.png'
+import CostcoLogo from './images/costco-logo.png'
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+const initialValues = {
+  liability_limit: 2000000,
+  comprehensive_deductible: 500,
+  collision_deductible: 500,
+  transportation_replacement: 1,
+  non_owned_autos: 0,
+  conviction_protector: 0,
+  income_replacement: 400,
+  medical_rehab_non: 65000,
+  medical_rehab: 2000000,
+  caregiver_benefit: 0,
+  death_funeral: 1,
+  dependent_care: 0,
+  indexation_benefit: 0,
 }
 
-export default App;
+export const AppContext = React.createContext()
+
+const App = () => {
+
+  // 'initial', 'initial-after-edit', 'customizing', 'customized', 'requoting', 'new-price'
+  const [currentStatus, setCurrentStatus] = useState('initial')
+
+  const [expanded, setExpanded] = useState(false)
+  const [pricesChanged, setPricesChanged] = useState(false)
+
+  const [values, setValues] = useState(initialValues)
+
+  const highest = {
+    liability_limit: 2000000,
+    comprehensive_deductible: 1000,
+    collision_deductible: 1000,
+    transportation_replacement: 1,
+    non_owned_autos: 1,
+    conviction_protector: 1,
+    income_replacement: 1,
+    medical_rehab: 2000000,
+  }
+
+  const lowest = {
+    comprehensive_deductible: 0,
+    collision_deductible: 0,
+  }
+
+  const [depreciationWaiver, setDepreciationWaiver] = useState([
+    { id: 1, value: true },
+    { id: 2, value: false },
+    { id: 3, value: false },
+    { id: 4, value: true },
+  ])
+
+  const [accidentWaiver, setAccidentWaiver] = useState([
+    { id: 1, value: false },
+    { id: 2, value: true },
+    { id: 3, value: false },
+    { id: 4, value: true },
+  ])
+
+  const resetValues = () => {
+    setValues(initialValues)
+  }
+
+  const itemChange = (name, value) => {
+    setValues((prevState) => {
+      const next = Object.assign({}, prevState)
+      next[name] = Number(value)
+      return next
+    })
+
+    const initial = initialValues[name]
+
+    if (Number(value) !== initial) {
+      // eslint-disable-line
+      setCurrentStatus('customized')
+    } else {
+      setCurrentStatus('initial-after-edit')
+    }
+  }
+
+  console.log('status is: ', currentStatus)
+
+  return (
+    <AppContext.Provider
+      value={{
+        values,
+        setValues,
+        depreciationWaiver,
+        setDepreciationWaiver,
+        accidentWaiver,
+        setAccidentWaiver,
+        pricesChanged,
+        setPricesChanged,
+        expanded,
+        setExpanded,
+        highest,
+        lowest,
+        resetValues,
+        currentStatus,
+        setCurrentStatus,
+        itemChange,
+      }}
+    >
+      <div className="App">
+        <div className="Header">
+          <img className="inova" src={InovaLogo} alt="Inova" />
+          <img className="costco" src={CostcoLogo} alt="Costco" />
+          <div className="CurrentNav"></div>
+        </div>
+        <HomePrice />
+        <StickyHeader />
+        <StickyFooter />
+        <p className="lead Intro">
+          Customize your coverage, look out for the{' '}
+          <Logo className="InlineLogo" /> <strong>recommended coverage</strong>{' '}
+          <Star className="InlineStar" /> as you make your choices!
+        </p>
+        <Coverages />
+      </div>
+    </AppContext.Provider>
+  )
+}
+
+export default App

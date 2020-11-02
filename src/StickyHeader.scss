@@ -1,0 +1,99 @@
+@import './utils';
+
+.StickyHeader {
+  position: sticky;
+  top: 0;
+  height: 65px;
+  border-bottom: 1px solid #ccc;
+  background: #fff;
+  margin: 0 -10px 2rem -10px;
+  padding: 10px 10px 6px 10px;
+  box-shadow: 0 6px 12px rgba(255,255,255, 1);
+  .left {
+    float: left;
+  }
+  .right {
+    float: right;
+  }
+  .Dollar {
+    display: inline-block;
+    vertical-align: 15px;
+    font-size: 14px;
+    color: #777;
+  }
+  .Price {
+    font-size: 36px;
+    line-height: 36px;
+    font-weight: bold;
+    margin-right: 5px;
+    color: $primary;
+  }
+  .Per {
+    display: inline-block;
+    width: 34px;
+    font-size: 12.5px;
+    line-height: 15px;
+    color: #777;
+  }
+  .Requote {
+    p {
+      margin: 0;
+      color: $primary;
+      text-align: center;
+      font-size: 1.25rem;
+      button {
+        background: $success;
+        border: none;
+        color: #fff;
+        padding: 8px 10px;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        border-radius: 5px;
+        outline: none;
+      }
+    }
+  }
+  .Interested {
+    display: block;
+    background: $success;
+    border: none;
+    text-transform: uppercase;
+    color: #fff;
+    font-size: 1.025rem;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+    padding: 0.5rem 0.75rem;
+    border-radius: 6px;
+  }
+}
+
+// spinner
+
+.LoadingSpinner,
+.LoadingSpinner:after {
+  border-radius: 50%;
+  width: 14px;
+  height: 14px;
+}
+.LoadingSpinner {
+  display: inline-block;
+  margin: 0 auto;
+  font-size: 10px;
+  position: relative;
+  text-indent: -9999em;
+  border-top: 4px solid rgba(255, 255, 255, 0.2);
+  border-right: 4px solid rgba(255, 255, 255, 0.2);
+  border-bottom: 4px solid rgba(255, 255, 255, 0.2);
+  border-left: 4px solid #ffffff;
+  transform: translateZ(0);
+  animation: spin 1.1s infinite linear;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}

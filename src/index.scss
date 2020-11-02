@@ -1,0 +1,114 @@
+@import './utils';
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  line-height: 1.5;
+  font-weight: 400;
+  color: #555;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h2,
+h3,
+h4,
+h5,
+strong {
+  color: $primary;
+  font-weight: 500;
+}
+
+h2 { font-size: 17px }
+h3 { font-size: 16px }
+h4 { font-size: 15px }
+h5 { font-size: 14px }
+
+.lead {
+  font-size: 1.35rem;
+}
+
+.App {
+  padding: 15px;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.primary {
+  color: $primary;
+}
+
+.success {
+  color: $success;
+}
+
+svg {
+  display: inline-block;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.text-left {
+  text-align: left;
+}
+
+.text-right {
+  text-align: right;
+}
+
+.clearfix:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+table {
+  width: 100%;
+  text-align: center;
+  border-collapse: collapse;
+  td {
+    border-top: 1px solid #ccc;
+  }
+}
+
+.Header {
+  img {
+    height: 50px;
+    margin-bottom: 5px;
+  }
+  img.costco {
+    float: right;
+  }
+  .CurrentNav {
+    background: #ccc;
+    height: 40px;
+    border-radius: 8px;
+  }
+}
+
+.lead {
+  text-align: center;
+  .InlineLogo {
+    display: inline-block;
+    vertical-align: middle;
+    height: 24px;
+  }
+  .InlineStar {
+    display: inline-block;
+    vertical-align: middle;
+    height: 18px;
+    .bg {
+      fill: tint($primary, 10%);
+    }
+    .fg {
+      fill: tint($primary, 40%);
+    }
+  }
+}

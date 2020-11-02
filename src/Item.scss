@@ -1,0 +1,81 @@
+@import './utils';
+
+.Item {
+  border: 1px solid #e1e1e1;
+  box-shadow: 2px 3px 3px 0 rgba(0,0,0,.1);
+  border-radius: 5px;
+  padding: 15px;
+  margin-bottom: 1.75rem;
+  h3,
+  p {
+    margin: 0;
+  }
+  &.Highest {
+    border-color: $primary;
+  }
+  &.Lowest {
+    border-color: $warning;
+  }
+  .PlainEnglish {
+    font-size: 1.05rem;
+    margin: 10px 0;
+  }
+  .HelpCopy {
+    display: block;
+    margin: 10px 0;
+  }
+  .Hidden {
+    width: 100%;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 340ms ease-out;
+    &.expanded {
+      max-height: 600px;
+    }
+  }
+}
+
+.Options {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  label {
+    text-align: center;
+    border: 1px solid #ccc;
+    flex-grow: 1;
+    margin: 0 5px;
+    padding: 5px;
+    border-radius: 4px;
+    span {
+      small {
+        display: block;
+      }
+    }
+    &:first-child {
+      margin-left: 0;
+    }
+    &:last-child {
+      margin-right: 0;
+    }
+    &.Highest {
+      border-color: $primary;
+      background: tint($primary, 90%);
+    }
+    &.Lowest {
+      border-color: $warning;
+      background: tint($warning, 90%);
+    }
+    .Star {
+      width: 16px;
+      display: inline-block;
+      vertical-align: middle;
+      margin-left: 5px;
+      .bg {
+        fill: tint($primary, 10%);
+      }
+      .fg {
+        fill: tint($primary, 40%);
+      }
+    }
+  }
+}
