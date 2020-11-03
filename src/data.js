@@ -141,20 +141,34 @@ export const collisionDeductible = {
 
 export const transportationReplacement = {
   title: 'Transportation Replacement',
-  plain: 'Reimbursement for transportation costs if your vehicle is in the shop due to an insured claim.',
-  help: 'If your vehicle is in the shop due to an insured claim, you can be reimbursed up to your limit for a rental car, taxi cab, or whatever you need to get around.',
+  plain:
+    'Reimbursement for transportation costs if your vehicle is in the shop due to an insured claim.',
+  help:
+    'If your vehicle is in the shop due to an insured claim, you can be reimbursed up to your limit for a rental car, taxi cab, or whatever you need to get around.',
   values: [
     {
       value: 0,
       display: <span>Not Included</span>,
+      plain: (
+        <span>
+          <strong>No coverage</strong> for transportation costs if your vehicle
+          is in the shop due to an insured claim.
+        </span>
+      ),
       brief: 'Not Included',
     },
     {
       value: 1,
       display: <span>Included</span>,
+      plain: (
+        <span>
+          <strong>Reimbursement</strong> for transportation costs if your vehicle
+          is in the shop due to an insured claim.
+        </span>
+      ),
       brief: 'Included',
     },
-  ]
+  ],
 }
 
 export const nonOwnedAutos = {
