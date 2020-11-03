@@ -9,10 +9,10 @@ import CostcoLogo from './images/costco-logo.png'
 
 const initialValues = {
   liability_limit: 2000000,
-  comprehensive_deductible: 500,
-  collision_deductible: 500,
+  comprehensive_deductible: 1000,
+  collision_deductible: 1000,
   transportation_replacement: 1,
-  non_owned_autos: 0,
+  non_owned_autos: 1,
   conviction_protector: 0,
   income_replacement: 400,
   medical_rehab_non: 65000,
@@ -53,15 +53,15 @@ const App = () => {
 
   const [depreciationWaiver, setDepreciationWaiver] = useState([
     { id: 1, value: true },
-    { id: 2, value: false },
-    { id: 3, value: false },
+    { id: 2, value: true },
+    { id: 3, value: true },
     { id: 4, value: true },
   ])
 
   const [accidentWaiver, setAccidentWaiver] = useState([
-    { id: 1, value: false },
+    { id: 1, value: true },
     { id: 2, value: true },
-    { id: 3, value: false },
+    { id: 3, value: true },
     { id: 4, value: true },
   ])
 

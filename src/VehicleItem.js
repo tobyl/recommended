@@ -65,7 +65,7 @@ const VehicleItem = ({ name, item }) => {
       <p className="PlainEnglish">{item.plain}</p>
       </div>
       <div className="ToggleTitles clearfix">
-        <span>Coverage Included</span>
+        <span>Included</span>
       </div>
       {vehicles.map((v) => (
         <Vehicle key={v.id} vehicle={v} />
