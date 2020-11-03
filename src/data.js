@@ -84,12 +84,12 @@ export const transportationReplacement = {
     {
       value: 0,
       display: <span>No Coverage</span>,
-      brief: '𐄂',
+      brief: 'Not Covered',
     },
     {
       value: 1,
       display: <span>Covered</span>,
-      brief: '✔︎',
+      brief: 'Covered',
     },
   ]
 }
@@ -102,7 +102,7 @@ export const nonOwnedAutos = {
     {
       value: 0,
       display: <span>No Coverage</span>,
-      brief: '𐄂',
+      brief: 'Not Covered',
     },
     {
       value: 1,
@@ -132,7 +132,7 @@ export const convicitionProtector = {
     {
       value: 0,
       display: <span>No Coverage</span>,
-      brief: '𐄂',
+      brief: 'Not Covered',
     },
     {
       value: 1,

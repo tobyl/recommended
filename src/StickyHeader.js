@@ -15,8 +15,6 @@ const StickyHeader = () => {
     }, 3000)
   }
 
-  console.log('current: ', currentStatus)
-
   return (
     <div className="StickyHeader clearfix">
       {(currentStatus === 'customized' || currentStatus === 'requoting' || currentStatus === 'customizing') && (

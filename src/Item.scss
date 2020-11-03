@@ -10,15 +10,19 @@
   p {
     margin: 0;
   }
-  &.Highest {
-    border-color: $primary;
+  h3 {
+    &:hover {
+      cursor: pointer;
+    }
   }
   &.Lowest {
     border-color: $warning;
+    background: tint($warning, 97%);
   }
   .PlainEnglish {
-    font-size: 1.05rem;
-    margin: 10px 0;
+    color: #777;
+    font-size: 1.1rem;
+    margin: 10px 0 15px 0;
   }
   .HelpCopy {
     display: block;
@@ -29,8 +33,10 @@
     max-height: 0;
     overflow: hidden;
     transition: max-height 340ms ease-out;
-    &.expanded {
-      max-height: 600px;
+  }
+  &.Expanded {
+    .Hidden {
+      max-height: 500px;
     }
   }
 }
@@ -42,6 +48,7 @@
   label {
     text-align: center;
     border: 1px solid #ccc;
+    background: #fff;
     flex-grow: 1;
     margin: 0 5px;
     padding: 5px;
@@ -58,23 +65,15 @@
       margin-right: 0;
     }
     &.Highest {
-      border-color: $primary;
-      background: tint($primary, 90%);
+
     }
     &.Lowest {
-      border-color: $warning;
-      background: tint($warning, 90%);
+
     }
-    .Star {
-      width: 16px;
-      display: inline-block;
-      vertical-align: middle;
-      margin-left: 5px;
-      .bg {
-        fill: tint($primary, 10%);
-      }
-      .fg {
-        fill: tint($primary, 40%);
+    &.Selected {
+      border-color: tint($primary, 10%);
+      span {
+        color: $primary;
       }
     }
   }

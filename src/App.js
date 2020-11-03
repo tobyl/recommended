@@ -1,5 +1,4 @@
-import React, { useState } from 'react'
-import { isEqual } from 'lodash'
+import React, { useEffect, useState } from 'react'
 import Coverages from './Coverages'
 import StickyHeader from './StickyHeader'
 import StickyFooter from './StickyFooter'
@@ -31,7 +30,7 @@ const App = () => {
   // 'initial', 'initial-after-edit', 'customizing', 'customized', 'requoting', 'new-price'
   const [currentStatus, setCurrentStatus] = useState('initial')
 
-  const [expanded, setExpanded] = useState(false)
+  const [allExpanded, setAllExpanded] = useState(false)
   const [pricesChanged, setPricesChanged] = useState(false)
 
   const [values, setValues] = useState(initialValues)
@@ -87,7 +86,15 @@ const App = () => {
     }
   }
 
-  console.log('status is: ', currentStatus)
+  useEffect(() => {
+    window.addEventListener('scroll', () => {
+      if (window.scrollY >= 350) {
+        document.body.classList.add('scrolled-to')
+      } else {
+        document.body.classList.remove('scrolled-to')
+      }
+    })
+  }, [])
 
   return (
     <AppContext.Provider
@@ -100,8 +107,8 @@ const App = () => {
         setAccidentWaiver,
         pricesChanged,
         setPricesChanged,
-        expanded,
-        setExpanded,
+        allExpanded,
+        setAllExpanded,
         highest,
         lowest,
         resetValues,
@@ -117,14 +124,20 @@ const App = () => {
           <div className="CurrentNav"></div>
         </div>
         <HomePrice />
-        <StickyHeader />
         <StickyFooter />
         <p className="lead Intro">
           Customize your coverage, look out for the{' '}
           <Logo className="InlineLogo" /> <strong>recommended coverage</strong>{' '}
           <Star className="InlineStar" /> as you make your choices!
         </p>
-        <Coverages />
+        <div className="clearfix">
+          <div className="RightCol">
+            <StickyHeader />
+          </div>
+          <div className="LeftCol">
+            <Coverages />
+          </div>
+        </div>
       </div>
     </AppContext.Provider>
   )

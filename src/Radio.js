@@ -18,6 +18,7 @@ const Radio = ({ name, index, item }) => {
     Highest: isHighest,
     Lowest: item.level === 'lowest',
     Neutral: item.level === 'neutral',
+    Selected: item.value === values[name],
   })
 
   return (

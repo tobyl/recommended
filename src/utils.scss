@@ -10,3 +10,16 @@ $error:   #e41632;
 @function shade($color, $percentage) {
   @return mix(black, $color, $percentage);
 }
+
+.Star {
+  width: 16px;
+  display: inline-block;
+  vertical-align: middle;
+  margin-left: 5px;
+  .bg {
+    fill: tint($primary, 10%);
+  }
+  .fg {
+    fill: tint($primary, 50%);
+  }
+}

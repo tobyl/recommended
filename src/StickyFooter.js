@@ -12,19 +12,13 @@ const StickyHeader = () => {
     setCurrentStatus('initial')
   }
 
-  return (
+  const show = currentStatus !== 'initial'
+
+  return show ? (
     <div className="StickyFooter">
-      <div>
-        {currentStatus === 'initial' || currentStatus === 'new-price' ? (
-          <button onClick={() => setCurrentStatus('customizing')}>
-            Customize Coverage
-          </button>
-        ) : (
-          <button onClick={handleReset}>Cancel Changes</button>
-        )}
-      </div>
+      <button onClick={handleReset}>Cancel Changes</button>
     </div>
-  )
+  ) : null
 }
 
 export default StickyHeader

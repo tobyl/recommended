@@ -1,17 +1,22 @@
-import React, { useContext } from 'react'
+import React, { useState, useContext } from 'react'
 import { vehicles } from './data'
 import { AppContext } from './App'
 
 import './VehicleItem.scss'
 
-const Vehicle = ({ vehicle }) => {
+const Vehicle = ({ name, vehicle, kind }) => {
 
   const { depreciationWaiver, setDepreciationWaiver, accidentWaiver, setAccidentWaiver } = useContext(AppContext)
 
-  let depreciation = depreciationWaiver.find(w => w.id === vehicle.id)
-  let accident = accidentWaiver.find(w => w.id === vehicle.id)
+  let item = {}
 
-  const handleChange = (kind, value) => {
+  if (kind === 'depreciation') {
+    item = depreciationWaiver.find((w) => w.id === vehicle.id)
+  } else if (kind === 'accident') {
+    item = accidentWaiver.find((w) => w.id === vehicle.id)
+  }
+
+  const handleChange = (value) => {
     if (kind === 'depreciation') {
       setDepreciationWaiver(prevState => {
         let next = [...prevState]
@@ -33,22 +38,13 @@ const Vehicle = ({ vehicle }) => {
         {vehicle.title}
       </div>
       <div className="Toggles">
-        <label htmlFor={'depreciation' + vehicle.id}>
+        <label htmlFor={String(kind + vehicle.id)}>
           <input
             type="checkbox"
-            name={'depreciation' + vehicle.id}
-            id={'depreciation' + vehicle.id}
-            checked={depreciation.value}
-            onChange={() => handleChange('depreciation', !depreciation.value)}
-          />
-        </label>
-        <label htmlFor={'accident' + vehicle.id}>
-          <input
-            type="checkbox"
-            name={'accident' + vehicle.id}
-            id={'accident' + vehicle.id}
-            checked={accident.value}
-            onChange={() => handleChange('accident', !accident.value)}
+            name={String(kind + vehicle.id)}
+            id={String(kind + vehicle.id)}
+            checked={item.value}
+            onChange={() => handleChange(kind, !item.value)}
           />
         </label>
       </div>
@@ -58,19 +54,18 @@ const Vehicle = ({ vehicle }) => {
 
 const VehicleItem = ({ name, item }) => {
 
+  const [expanded, setExpanded] = useState(false)
+
   const { currentStatus } = useContext(AppContext)
 
   return (
-    <div className="Item VehicleItem">
+    <div className={expanded ? 'Item VehicleItem Expanded' : 'Item VehicleItem'}>
+      <h3 onClick={() => setExpanded(!expanded)}>{item.title}</h3>
       <div className={(currentStatus !== 'initial' || currentStatus === 'initial-after-edit') ? 'Hidden expanded' : 'Hidden'}>
-        <p className="PlainEnglish">
-        Accident and depreciation waivers are applicable for some vehicles
-        depending upon age and driver history.
-      </p>
+      <p className="PlainEnglish">{item.plain}</p>
       </div>
       <div className="ToggleTitles clearfix">
-        <span>Waiver of Depreciation</span>
-        <span>Accident Waiver</span>
+        <span>Coverage Included</span>
       </div>
       {vehicles.map((v) => (
         <Vehicle key={v.id} vehicle={v} />

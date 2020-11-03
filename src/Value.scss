@@ -2,18 +2,6 @@
 
 .ItemValue {
   float: right;
-  .Star {
-    display: inline-block;
-    vertical-align: middle;
-    height: 24px;
-    margin-left: 5px;
-    .bg {
-      fill: tint($primary, 10%);
-    }
-    .fg {
-      fill: tint($primary, 40%);
-    }
-  }
   .Warning {
     display: inline-block;
     vertical-align: middle;

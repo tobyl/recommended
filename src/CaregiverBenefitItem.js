@@ -1,10 +1,12 @@
-import React, { useContext } from 'react'
+import React, { useState, useContext } from 'react'
 // import Radio from './Radio'
 import { AppContext } from './App'
 
 import './Item.scss'
 
 const DeathFuneralItem = ({ name, item, headers, children }) => {
+
+  const [expanded, setExpanded] = useState(false)
 
   const { values, setValues } = useContext(AppContext)
   const val = values[name]
@@ -18,16 +20,19 @@ const DeathFuneralItem = ({ name, item, headers, children }) => {
   }
 
   return (
-    <div className="Item">
-      <h3>{item.title}</h3>
-      <p className="PlainEnglish">{item.plain}</p>
+    <div className={expanded ? 'Item Expanded' : 'Item'}>
+      <h3 onClick={() => setExpanded(!expanded)}>{item.title}</h3>
+      <div className="Hidden">
+        <p className="PlainEnglish">{item.plain}</p>
+      </div>
       <table>
         <thead>
           <tr>
             <th></th>
             <th>
               <label htmlFor={name + '0'}>
-                Standard<br />
+                Standard
+                <br />
                 <input
                   id={name + '0'}
                   type="radio"
@@ -39,7 +44,8 @@ const DeathFuneralItem = ({ name, item, headers, children }) => {
             </th>
             <th>
               <label htmlFor={name + '0'}>
-              Increased<br />
+                Increased
+                <br />
                 <input
                   id={name + '1'}
                   type="radio"
@@ -58,7 +64,9 @@ const DeathFuneralItem = ({ name, item, headers, children }) => {
             <td>All injuries</td>
           </tr>
           <tr>
-            <td className="text-left">Additional dependents up to $50 weekly</td>
+            <td className="text-left">
+              Additional dependents up to $50 weekly
+            </td>
             <td>Catastrophic injuries</td>
             <td>All injuries</td>
           </tr>
