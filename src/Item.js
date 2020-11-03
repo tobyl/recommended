@@ -19,6 +19,16 @@ const Item = ({ name, item, isOab, optionsHidden = false }) => {
     OAB: isOab,
   })
 
+  const selected = item.values.find(x => x.value === values[name])
+
+  let plain = ''
+
+  if (selected.plain) {
+    plain = selected.plain
+  } else {
+    plain = item.plain
+  }
+
   return (
     <div className={cls}>
       <h3 onClick={() => setExpanded(!expanded)}>
@@ -26,7 +36,7 @@ const Item = ({ name, item, isOab, optionsHidden = false }) => {
         {item.title}
       </h3>
       <div className="Hidden">
-        <p className="PlainEnglish">{item.plain}</p>
+        <p className="PlainEnglish">{plain}</p>
         {optionsHidden ? null : (
           <div>
             {item.values.length > 0 && (

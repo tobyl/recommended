@@ -7,74 +7,136 @@ export const vehicles = [
 
 export const liabilityLimit = {
   title: 'Liability Limit',
-  plain: 'Provides protection against lawsuits resulting from an accident causing bodily injury, death, or property damage for up to $2,000,000 ',
-  help: 'This protects you from lawsuits resulting from accidents causing bodily injury or death to others or property damage.',
+  plain:
+    'Provides protection against lawsuits resulting from an accident causing bodily injury, death, or property damage for up to $2,000,000.',
+  help:
+    'This protects you from lawsuits resulting from accidents causing bodily injury or death to others or property damage.',
   values: [
     {
       value: 1000000,
       display: <span>$1,000,000</span>,
       brief: '$1m',
       level: 'neutral',
+      plain: (
+        <span>
+          Provides protection against lawsuits resulting from an accident
+          causing bodily injury, death, or property damage for up to 
+          <strong>$1,000,000</strong>.
+        </span>
+      ),
     },
     {
       value: 2000000,
       display: <span>$2,000,000</span>,
       brief: '$2m',
       level: 'highest',
+      plain: (
+        <span>
+          Provides protection against lawsuits resulting from an accident
+          causing bodily injury, death, or property damage for up to 
+          <strong>$2,000,000</strong>.
+        </span>
+      ),
     },
-  ]
+  ],
 }
 
 export const comprehensiveDeductible = {
   title: 'Comprehensive Deductible',
-  plain: 'You would be responsible for the first $500 of damages to your vehicle for comprehensive coverage (fire, theft, vandalism, etc).',
-  help: 'Comprehensive coverage pays for damages to your vehicle not caused by a traffic accident (e.g. theft, fire, vandalism). As a vehicle gets older, its value goes down, and paying for comprehensive coverage on your car may no longer be worth it. Not purchasing comprehensive coverage may make sense if you are insuring a car that is not worth very much.',
+  plain:
+    'You would be responsible for the first $500 of damages to your vehicle for comprehensive coverage (fire, theft, vandalism, etc).',
+  help:
+    'Comprehensive coverage pays for damages to your vehicle not caused by a traffic accident (e.g. theft, fire, vandalism). As a vehicle gets older, its value goes down, and paying for comprehensive coverage on your car may no longer be worth it. Not purchasing comprehensive coverage may make sense if you are insuring a car that is not worth very much.',
   values: [
     {
       value: 0,
       display: <span>Not Included</span>,
+      plain: (
+        <span>
+          You would be responsible for the <strong className="warning">full cost</strong> of any
+          damages to your vehicle for comprehensive coverage (fire, theft,
+          vandalism, etc).
+        </span>
+      ),
       brief: 'Not Included',
       level: 'lowest',
     },
     {
       value: 500,
       display: <span>$500 deductible</span>,
+      plain: (
+        <span>
+          You would be responsible for the first <strong>$500</strong> of
+          damages to your vehicle for comprehensive coverage (fire, theft,
+          vandalism, etc).
+        </span>
+      ),
       brief: '$500 deductible',
       level: 'neutral',
     },
     {
       value: 1000,
       display: <span>$1,000 deductible</span>,
+      plain: (
+        <span>
+          You would be responsible for the first <strong>$1,000</strong> of
+          damages to your vehicle for comprehensive coverage (fire, theft,
+          vandalism, etc).
+        </span>
+      ),
       brief: '$1,000 deductible',
       level: 'highest',
     },
-  ]
+  ],
 }
 
 export const collisionDeductible = {
   title: 'Collision Coverage',
-  plain: 'You would be responsible for the first $500 of damages to your vehicle for collision coverage (at fault accidents, single vehicle accidents, or hit and run).',
-  help: 'Collision coverage will repair your vehicle if you are involved in an at-fault accident, single vehicle accident, or hit and run. The deductible is the amount of money that you will pay out of your own pocket before the insurance company responds.',
+  plain:
+    'You would be responsible for the first $500 of damages to your vehicle for collision coverage (at fault accidents, single vehicle accidents, or hit and run).',
+  help:
+    'Collision coverage will repair your vehicle if you are involved in an at-fault accident, single vehicle accident, or hit and run. The deductible is the amount of money that you will pay out of your own pocket before the insurance company responds.',
   values: [
     {
       value: 0,
       display: <span>Not Included</span>,
+      plain: (
+        <span>
+          You would be responsible for the{' '}
+          <strong className="warning">full cost</strong> of any damages to your
+          vehicle for comprehensive coverage (fire, theft, vandalism, etc).
+        </span>
+      ),
       brief: 'Not Included',
       level: 'lowest',
     },
     {
       value: 500,
       display: <span>$500 deductible</span>,
+      plain: (
+        <span>
+          You would be responsible for the first <strong>$500</strong> of
+          damages to your vehicle for comprehensive coverage (fire, theft,
+          vandalism, etc).
+        </span>
+      ),
       brief: '$500 deductible',
       level: 'neutral',
     },
     {
       value: 1000,
       display: <span>$1,000 deductible</span>,
+      plain: (
+        <span>
+          You would be responsible for the first <strong>$1,000</strong> of
+          damages to your vehicle for comprehensive coverage (fire, theft,
+          vandalism, etc).
+        </span>
+      ),
       brief: '$1,000 deductible',
       level: 'highest',
     },
-  ]
+  ],
 }
 
 export const transportationReplacement = {
