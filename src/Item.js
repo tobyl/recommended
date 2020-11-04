@@ -3,6 +3,7 @@ import classNames from 'classnames'
 import Radio from './Radio'
 import Value from './Value'
 import { AppContext } from './App'
+import { Chevron } from './icons'
 
 import './Item.scss'
 
@@ -21,9 +22,10 @@ const Item = ({ name, item, isOab, optionsHidden = false }) => {
 
   return (
     <div className={cls}>
+      {/* <Chevron /> */}
       <h3 onClick={() => setExpanded(!expanded)}>
         <Value name={name} item={item} isOab={isOab} />
-        {item.title}
+        ^ {item.title}
       </h3>
       <div className="Hidden">
         <p className="PlainEnglish">{item.plain}</p>
@@ -38,6 +40,7 @@ const Item = ({ name, item, isOab, optionsHidden = false }) => {
             )}
           </div>
         )}
+        <hr />
         <small className="HelpCopy">{item.help}</small>
       </div>
     </div>
