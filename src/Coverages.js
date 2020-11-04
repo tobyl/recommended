@@ -53,9 +53,15 @@ const Coverages = () => {
         />
       )}
       <VehicleItem
+        name="accident_waiver_single"
+        kind="accident"
+        item={accidentWaiver}
+      />
+      <VehicleItem
         name="accident_waiver"
         kind="accident"
         item={accidentWaiver}
+        ShowVehicles
       />
       <Item name="conviction_protector" item={convicitionProtector} />
       {/* OABs */}

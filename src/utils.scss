@@ -1,6 +1,27 @@
 $primary: #0953a0;
-$success: #2ec36a;
+$primary-bg: #f3f9ff;
+$primary-bg-border: #d4e9ff;
+$primary-bg-shadow: #3077c2;
+$primary-copy: #0953a0;
+
+$selected-bg: #e1f0ff;
+$selected-bg-border: #b2c8dd;
+$selected-bg-shadow: #c7c9d0;
+$selected-copy: #063a72;
+
+$default: #0953a0;
+$default-bg: #fff;
+$default-bg-border: #f1f4fd;
+$default-bg-shadow: #e3e6f1;
+$default-copy: #555;
+
 $warning: #ffa200;
+$warning-bg: #fffcf7;
+$warning-bg-border: #ffeccc;
+$warning-bg-shadow: #ecdfc6;
+$warning-copy: #956B23;
+
+$success: #2ec36a;
 $error:   #e41632;
 
 @function tint($color, $percentage) {

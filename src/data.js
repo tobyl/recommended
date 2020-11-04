@@ -1,8 +1,24 @@
 export const vehicles = [
-  { id: 1, title: <span><small>2018 HONDA</small><strong>RIDGELINE LX</strong></span> },
-  { id: 2, title: <span><small>2020 FORD</small><strong>FOCUS SE</strong></span> },
-  { id: 3, title: <span><small>2017 CHEVROLET</small><strong>COLORADO LT</strong></span> },
-  { id: 4, title: <span><small>2020 GMC</small><strong>ACADIA SLT</strong></span> },
+  {
+    id: 1,
+    title: <span><small>2018 HONDA</small><strong>RIDGELINE LX</strong></span>,
+    value: true,
+  },
+  {
+    id: 2,
+    title: <span><small>2020 FORD</small><strong>FOCUS SE</strong></span>,
+    value: true,
+  },
+  {
+    id: 3,
+    title: <span><small>2017 CHEVROLET</small><strong>COLORADO LT</strong></span>,
+    value: false,
+  },
+  {
+    id: 4,
+    title: <span><small>2020 GMC</small><strong>ACADIA SLT</strong></span>,
+    value: true,
+  },
 ]
 
 export const liabilityLimit = {
@@ -199,6 +215,30 @@ export const accidentWaiver = {
   title: 'Accident Waiver',
   plain: 'If you are involved in an at fault accident, your driving record will be remain the same and your premium won’t increase as a result of the accident.',
   help: null,
+  values: [
+    {
+      value: 0,
+      display: <span>Not Included</span>,
+      plain: (
+        <span>
+          <strong>No coverage</strong> for transportation costs if your vehicle
+          is in the shop due to an insured claim.
+        </span>
+      ),
+      brief: 'Not Included',
+    },
+    {
+      value: 1,
+      display: <span>Included</span>,
+      plain: (
+        <span>
+          <strong>Reimbursement</strong> for transportation costs if your vehicle
+          is in the shop due to an insured claim.
+        </span>
+      ),
+      brief: 'Included',
+    },
+  ],
 }
 
 export const convicitionProtector = {
