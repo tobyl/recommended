@@ -30,7 +30,7 @@ const Radio = ({ name, index, item }) => {
         onChange={handleChange}
         checked={item.value === values[name]}
       />{' '}
-      <div>{item.display}{isHighest && <Star />}</div>
+      {item.display}{isHighest && <Star />}
     </label>
   )
 }

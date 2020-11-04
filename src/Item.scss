@@ -1,11 +1,11 @@
 @import './utils';
 
 .Item {
-  border: 1px solid #e1e1e1;
-  box-shadow: 2px 3px 3px 0 rgba(0,0,0,.1);
+  border: 2px solid #fff;
+  box-shadow: 2px 2px 1px 0 rgba(0,0,0, 0);
   border-radius: 5px;
   padding: 15px;
-  margin-bottom: 1.75rem;
+  // margin-bottom: 1.75rem;
   h3,
   p {
     margin: 0;
@@ -15,14 +15,14 @@
       cursor: pointer;
     }
   }
-  &.Lowest {
-    border-color: $warning;
-    background: tint($warning, 97%);
+  hr {
+    border: solid 1px $default-bg-border;
+    margin: 24px 0px;
   }
   .PlainEnglish {
     color: #777;
     font-size: 1.1rem;
-    margin: 10px 0 15px 0;
+    margin: 24px 0 15px 0;
   }
   .HelpCopy {
     display: block;
@@ -34,11 +34,32 @@
     overflow: hidden;
     transition: max-height 340ms ease-out;
   }
+  &.Lowest, &.Expanded.Lowest {
+    border-color: $warning-bg-border;
+    background: $warning-bg;
+    h3 {
+      color: $warning-copy;
+    }
+    .PlainEnglish {
+      color: $warning-copy;
+    }
+    hr {
+      border-color: $warning-bg-border;
+    }
+  }
   &.Expanded {
     .Hidden {
       max-height: 500px;
     }
-  }
+    &.Lowest {
+      box-shadow: 2px 2px 0px 0 $warning-bg-shadow;
+      color: $warning-copy;
+    }
+    margin-bottom: 1.75rem;
+    border: 2px solid #fdf1f1;
+    box-shadow: 2px 2px 0px 0 $default-bg-shadow;
+    border-radius: 5px;
+  }  
 }
 
 .Options {
@@ -46,12 +67,12 @@
   flex-direction: row;
   justify-content: space-between;
   label {
-    text-align: center;
-    border: 1px solid #ccc;
-    background: #fff;
+    // text-align: center;
+    // border: 2px solid rgb(201, 202, 218);
+    background: $default-bg;
     flex-grow: 1;
     margin: 0 5px;
-    padding: 5px;
+    padding: 8px;
     border-radius: 4px;
     span {
       small {
@@ -62,7 +83,7 @@
       margin-left: 0;
     }
     &:last-child {
-      margin-right: 0;
+      margin-right: 1px;
     }
     &.Highest {
 
@@ -71,9 +92,11 @@
 
     }
     &.Selected {
-      border-color: tint($primary, 10%);
+      border-color: $selected-bg-border;
+      background: $selected-bg;
+      box-shadow: 1px 1px 1px 0 $selected-bg-shadow;
       span {
-        color: $primary;
+        color: $selected-copy;
       }
     }
   }
