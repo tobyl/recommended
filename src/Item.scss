@@ -19,6 +19,21 @@
       color: #888;
       font-weight: normal;
     }
+    .ExpandIcon {
+      float: right;
+      display: block;
+      width: 25px;
+      transition: transform 340ms ease-out;
+      svg {
+        display: block;
+        .Circle {
+          fill: #3077c2;
+        }
+        .Arrow {
+          stroke: #3077c2;
+        }
+      }
+    }
   }
   .PlainEnglish {
     color: #777;
@@ -54,14 +69,17 @@
     // padding-bottom: 20px;
     // border-top: 1px solid $primary;
     // border-bottom: 1px solid $primary;
-    border-top: 1px solid $primary-border;
-    border-bottom: 1px solid $primary-border;
+    border-top: 1px solid #8cb0d6;
+    border-bottom: 1px solid #8cb0d6;
     background: linear-gradient(0deg,
       $primary-bg 0%, 
       #fff 20%,
       #fff 80%,
       $primary-bg 100%,
     );
+    .ExpandIcon {
+      transform: rotate(180deg);
+    }
     .Hidden {
       max-height: 500px;
     }
