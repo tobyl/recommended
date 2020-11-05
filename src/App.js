@@ -30,6 +30,8 @@ export const AppContext = React.createContext()
 
 const App = () => {
 
+  const [openItem, setOpenItem] = useState('')
+
   // 'initial', 'initial-after-edit', 'customizing', 'customized', 'requoting', 'new-price'
   const [currentStatus, setCurrentStatus] = useState('initial')
 
@@ -118,6 +120,8 @@ const App = () => {
         currentStatus,
         setCurrentStatus,
         itemChange,
+        openItem,
+        setOpenItem,
       }}
     >
       <div className="App">

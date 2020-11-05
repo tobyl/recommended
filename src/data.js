@@ -31,7 +31,7 @@ export const liabilityLimit = {
     {
       value: 1000000,
       display: <span>$1,000,000</span>,
-      brief: '$1m',
+      brief: '$1,000,000',
       level: 'neutral',
       plain: (
         <span>
@@ -44,7 +44,7 @@ export const liabilityLimit = {
     {
       value: 2000000,
       display: <span>$2,000,000</span>,
-      brief: '$2m',
+      brief: '$2,000,000',
       level: 'highest',
       plain: (
         <span>

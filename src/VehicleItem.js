@@ -34,14 +34,22 @@ const VehicleItem = ({ name, item, ShowVehicles = false }) => {
   const { currentStatus } = useContext(AppContext)
 
   return (
-    <div className={expanded ? 'Item VehicleItem Expanded' : 'Item VehicleItem'}>
+    <div
+      className={expanded ? 'Item VehicleItem Expanded' : 'Item VehicleItem'}
+    >
       <h3 onClick={() => setExpanded(!expanded)}>
+        <em>{item.title}</em>
         <div className="ItemValue">
           {ShowVehicles ? '3/4 Vehicles Covered' : 'All Vehicles Covered'}
         </div>
-        {item.title}
       </h3>
-      <div className={(currentStatus !== 'initial' || currentStatus === 'initial-after-edit') ? 'Hidden expanded' : 'Hidden'}>
+      <div
+        className={
+          currentStatus !== 'initial' || currentStatus === 'initial-after-edit'
+            ? 'Hidden expanded'
+            : 'Hidden'
+        }
+      >
         <p className="PlainEnglish">{item.plain}</p>
         {item.values && item.values.length > 0 && (
           <div className="Options">

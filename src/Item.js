@@ -1,4 +1,4 @@
-import React, { useState, useContext } from 'react'
+import React, { useContext } from 'react'
 import classNames from 'classnames'
 import Radio from './Radio'
 import Value from './Value'
@@ -8,12 +8,11 @@ import './Item.scss'
 
 const Item = ({ name, item, isOab, optionsHidden = false }) => {
 
-  const [expanded, setExpanded] = useState(false)
-
-  const { values, highest, lowest } = useContext(AppContext)
+  const { values, highest, lowest, openItem, setOpenItem } = useContext(AppContext)
 
   const cls = classNames('Item', {
-    Expanded: expanded,
+    Expanded: openItem === name,
+    NotOpen: openItem !== '' && openItem !== name,
     Highest: highest[name] === values[name],
     Lowest: lowest[name] === values[name],
     OAB: isOab,
@@ -31,9 +30,9 @@ const Item = ({ name, item, isOab, optionsHidden = false }) => {
 
   return (
     <div className={cls}>
-      <h3 onClick={() => setExpanded(!expanded)}>
+      <h3 onClick={() => setOpenItem(name)}>
+        <em>{item.title}</em>
         <Value name={name} item={item} isOab={isOab} />
-        {item.title}
       </h3>
       <div className="Hidden">
         <p className="PlainEnglish">{plain}</p>
