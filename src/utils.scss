@@ -45,3 +45,16 @@ $error:   #e41632;
     fill: tint($primary, 50%);
   }
 }
+
+.Warning {
+  width: 16px;
+  display: inline-block;
+  vertical-align: middle;
+  margin-left: 5px;
+  .bg {
+    fill: $warning;
+  }
+  .fg {
+    fill: tint($warning, 60%);
+  }
+}

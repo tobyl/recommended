@@ -1,4 +1,5 @@
 import React, { useContext } from 'react'
+import classNames from 'classnames'
 import { vehicles } from './data'
 import Radio from './Radio'
 import { AppContext } from './App'
@@ -35,10 +36,13 @@ const VehicleItem = ({ name, item, ShowVehicles = false }) => {
     openItem === name ? setOpenItem('') : setOpenItem(name)
   }
 
+  const cls = classNames('Item VehicleItem', {
+    Expanded: openItem === name,
+    NotOpen: openItem !== name && openItem !== '',
+  })
+
   return (
-    <div
-      className={openItem === name ? 'Item VehicleItem Expanded' : 'Item VehicleItem'}
-    >
+    <div className={cls}>
       <h3 onClick={handleClick}>
         <span className="ExpandIcon">
           <svg viewBox="0 0 500 500" xmlns="http://www.w3.org/2000/svg">
@@ -54,7 +58,7 @@ const VehicleItem = ({ name, item, ShowVehicles = false }) => {
         </span>
         <em>{item.title}</em>
         <div className="ItemValue">
-          {ShowVehicles ? '3/4 Vehicles Covered' : 'All Vehicles Covered'}
+          {ShowVehicles ? 'Included for 3/4 Vehicles' : 'All Vehicles Included'}
         </div>
       </h3>
       <div

@@ -1,19 +1,6 @@
 @import './utils';
 
 .ItemValue {
-  // float: right;
-  .Warning {
-    display: inline-block;
-    vertical-align: middle;
-    height: 24px;
-    margin-left: 5px;
-    .bg {
-      fill: tint($warning, 10%);
-    }
-    .fg {
-      fill: tint($warning, 40%);
-    }
-  }
   &.OAB {
     .Star,
     .Warning {

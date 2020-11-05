@@ -16,7 +16,7 @@
     }
     em {
       font-style: normal;
-      color: #888;
+      color: #777;
       font-weight: normal;
     }
     .ExpandIcon {
@@ -70,14 +70,8 @@
     // padding-bottom: 20px;
     // border-top: 1px solid $primary;
     // border-bottom: 1px solid $primary;
-    border-top: 1px solid #8cb0d6;
-    border-bottom: 1px solid #8cb0d6;
-    background: linear-gradient(0deg,
-      $primary-bg 0%, 
-      #fff 20%,
-      #fff 80%,
-      $primary-bg 100%,
-    );
+    border-top: 2px solid #abc2da;
+    border-bottom: 2px solid #abc2da;
     .ExpandIcon {
       transform: rotate(180deg);
     }
