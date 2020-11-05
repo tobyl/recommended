@@ -3,7 +3,7 @@ import { AppContext } from './App'
 
 import './StickyFooter.scss'
 
-const StickyHeader = () => {
+const StickyFooter = () => {
 
   const { resetValues, currentStatus, setCurrentStatus } = useContext(AppContext)
 
@@ -21,4 +21,4 @@ const StickyHeader = () => {
   ) : null
 }
 
-export default StickyHeader
+export default StickyFooter

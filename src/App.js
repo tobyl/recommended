@@ -91,6 +91,11 @@ const App = () => {
     }
   }
 
+  const handleReset = () => {
+    resetValues()
+    setCurrentStatus('initial')
+  }
+
   useEffect(() => {
     window.addEventListener('scroll', () => {
       if (window.scrollY >= 350) {
@@ -100,6 +105,8 @@ const App = () => {
       }
     })
   }, [])
+
+  const show = currentStatus !== 'initial'
 
   return (
     <AppContext.Provider
@@ -140,6 +147,12 @@ const App = () => {
         <div className="clearfix">
           <div className="RightCol">
             <StickyHeader />
+            {show && (
+              <div className="CancelBtn">
+                <hr />
+                <button onClick={handleReset}>Cancel Changes</button>
+              </div>
+            )}
           </div>
           <div className="LeftCol">
             <Coverages />
