@@ -4,7 +4,9 @@
   border-left: none;
   border-right: none;
   padding: 15px 10px;
-  transition: margin 340ms ease-out;
+  transition: margin 340ms ease-out, border-color 340ms ease-out;
+  border-top: 2px solid #fff;
+  border-bottom: 2px solid #fff;
   h3,
   p {
     margin: 0;
