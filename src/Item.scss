@@ -80,7 +80,12 @@
     }
     &.Lowest {
       // box-shadow: 2px 2px 0px 0 $warning-bg-shadow;
-      color: $warning-copy;
+      small {
+        color: $warning-copy;
+      }
+      label {
+        border: 1px solid #e9cfa2;
+      }
     }
     // margin-bottom: 1.75rem;
     // border: 2px solid #fdf1f1;
@@ -125,6 +130,13 @@
       box-shadow: 1px 1px 1px 0 $selected-bg-shadow;
       span {
         color: $selected-copy;
+      }
+      &.Lowest {
+        background: #e9cfa2;
+        box-shadow: 1px 1px 1px 0 #cfb480;
+        span {
+          color: $warning-copy;
+        }
       }
     }
   }
