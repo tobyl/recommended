@@ -29,6 +29,11 @@
       float: right;
       margin-top: 15px;
       color: $primary;
+      svg {
+        display: inline-block;
+        width: 20px;
+        fill: $primary-bg-shadow;
+      }
     }
     em {
       float: right;
