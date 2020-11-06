@@ -93,6 +93,7 @@ const App = () => {
 
   const handleReset = () => {
     resetValues()
+    setOpenItem('')
     setCurrentStatus('initial')
   }
 
@@ -124,6 +125,7 @@ const App = () => {
         highest,
         lowest,
         resetValues,
+        handleReset,
         currentStatus,
         setCurrentStatus,
         itemChange,
