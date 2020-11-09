@@ -69,6 +69,12 @@
       border-color: $warning-bg-border;
     }
   }
+  &.OAB {
+    border-bottom-width: 0 !important;
+    .ExpandIcon {
+      display: none;
+    }
+  }
   &.Expanded {
     // padding-top: 20px;
     // padding-bottom: 20px;

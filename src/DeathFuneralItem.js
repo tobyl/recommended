@@ -5,9 +5,9 @@ import { AppContext } from './App'
 
 import './Item.scss'
 
-const DeathFuneralItem = ({ name, item, headers, children }) => {
+const DeathFuneralItem = ({ name, item, headers, children, isOab }) => {
 
-  const { values, setValues, openItem, setOpenItem } = useContext(AppContext)
+  const { values, setValues, openItem, setOpenItem, oabsExpanded } = useContext(AppContext)
   const val = values[name]
 
   const handleChange = e => {
@@ -19,8 +19,9 @@ const DeathFuneralItem = ({ name, item, headers, children }) => {
   }
 
   const cls = classNames('Item', {
-    Expanded: openItem === name,
+    Expanded: oabsExpanded,
     NotOpen: openItem !== '' && openItem !== name,
+    OAB: isOab,
   })
 
   const handleClick = () => {

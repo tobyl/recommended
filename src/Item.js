@@ -8,10 +8,10 @@ import './Item.scss'
 
 const Item = ({ name, item, isOab, optionsHidden = false }) => {
 
-  const { values, highest, lowest, openItem, setOpenItem } = useContext(AppContext)
+  const { values, highest, lowest, openItem, setOpenItem, oabsExpanded } = useContext(AppContext)
 
   const cls = classNames('Item', {
-    Expanded: openItem === name,
+    Expanded: openItem === name || (isOab && oabsExpanded),
     NotOpen: openItem !== '' && openItem !== name,
     Highest: highest[name] === values[name],
     Lowest: lowest[name] === values[name],
@@ -29,7 +29,11 @@ const Item = ({ name, item, isOab, optionsHidden = false }) => {
   }
 
   const handleClick = () => {
-    openItem === name ? setOpenItem('') : setOpenItem(name)
+    if (isOab) {
+      return null
+    } else {
+      openItem === name ? setOpenItem('') : setOpenItem(name)
+    }
   }
 
   return (

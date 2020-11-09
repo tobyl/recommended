@@ -22,7 +22,7 @@ import {
   indexationBenefit,
 } from './data'
 
-const Coverages = () => {
+const Coverages = ({ oabsExpanded, setOabsExpanded }) => {
 
   const { values } = useContext(AppContext)
 
@@ -65,22 +65,31 @@ const Coverages = () => {
       />
       <Item name="conviction_protector" item={convicitionProtector} />
       {/* OABs */}
+      <hr />
+      <h2>Optional Accident Benefits</h2>
+      <p className="lead" style={{ textAlign: 'left', fontSize: '1.15rem' }}>Included in your quote are the following additional benefits. You can customize your benefits further by customizing your coverage.</p>
+      <p style={{ marginBottom: '2rem' }}>
+        <button className="OabCustomize" onClick={() => setOabsExpanded(!oabsExpanded)}>{oabsExpanded ? 'Close All' : 'Customize'}</button>
+      </p>
       <Item name="medical_rehab_non" item={medicalRehabNon} isOab />
-      <Item name="medical_rehab" item={medicalRehab} />
+      <Item name="medical_rehab" item={medicalRehab} isOab />
       <Item name="income_replacement" item={incomeReplacement} isOab />
       <Item
         name="caregiver_benefit"
         item={caregiverBenefit}
+         isOab
       />
       <DeathFuneralItem
         name="death_funeral"
         item={deathFuneral}
         headers={['', 'standard', 'increased']}
+        isOab
       />
       <DependentCareItem
         name="dependent_care"
         item={dependentCare}
         headers={['', 'standard', 'increased']}
+        isOab
       />
       <Item name="indexation_benefit" item={indexationBenefit} isOab />
     </div>

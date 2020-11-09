@@ -31,6 +31,7 @@ export const AppContext = React.createContext()
 const App = () => {
 
   const [openItem, setOpenItem] = useState('')
+  const [oabsExpanded, setOabsExpanded] = useState(false)
 
   // 'initial', 'initial-after-edit', 'customizing', 'customized', 'requoting', 'new-price'
   const [currentStatus, setCurrentStatus] = useState('initial')
@@ -131,6 +132,7 @@ const App = () => {
         itemChange,
         openItem,
         setOpenItem,
+        oabsExpanded,
       }}
     >
       <div className="App">
@@ -157,7 +159,7 @@ const App = () => {
             )}
           </div>
           <div className="LeftCol">
-            <Coverages />
+            <Coverages oabsExpanded={oabsExpanded} setOabsExpanded={setOabsExpanded} />
           </div>
         </div>
       </div>

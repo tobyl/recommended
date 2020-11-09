@@ -30,6 +30,13 @@ h3 { font-size: 16px }
 h4 { font-size: 15px }
 h5 { font-size: 14px }
 
+hr {
+  border: none;
+  border-top: 1px solid #ccc;
+  margin-top: 2.5rem;
+  margin-bottom: 3rem;
+}
+
 .lead {
   font-size: 1.35rem;
 }
@@ -136,5 +143,22 @@ table {
 @media (min-width: 768px) {
   .CancelBtn {
     display: block;
+  }
+}
+
+.OabCustomize {
+  display: block;
+  background: $success;
+  border: none;
+  text-transform: uppercase;
+  color: #fff;
+  font-size: 0.85rem;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  padding: 0.5rem 0.75rem;
+  border-radius: 6px;
+  outline: none;
+  &:hover {
+    cursor: pointer;
   }
 }
