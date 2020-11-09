@@ -49,7 +49,7 @@ const VehicleItem = ({ name, item, ShowVehicles = false }) => {
         </span>
         <em>{item.title}</em>
         <div className="ItemValue">
-          {ShowVehicles ? 'Included for 3/4 Vehicles' : 'All Vehicles Included'}
+          {ShowVehicles ? 'Included for 3 of 4 Vehicles' : 'All Vehicles Included'}
         </div>
       </h3>
       <div
