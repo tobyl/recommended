@@ -5,7 +5,7 @@ import './StickyFooter.scss'
 
 const StickyFooter = () => {
 
-  const { resetValues, currentStatus, setCurrentStatus, handleReset } = useContext(AppContext)
+  const { currentStatus, handleReset } = useContext(AppContext)
 
   const show = currentStatus !== 'initial'
 
