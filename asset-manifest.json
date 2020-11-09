@@ -1,14 +1,14 @@
 {
   "files": {
-    "main.css": "/recommended/static/css/main.eefc916a.chunk.css",
-    "main.js": "/recommended/static/js/main.b1780f7a.chunk.js",
-    "main.js.map": "/recommended/static/js/main.b1780f7a.chunk.js.map",
+    "main.css": "/recommended/static/css/main.62eef966.chunk.css",
+    "main.js": "/recommended/static/js/main.b9143ff3.chunk.js",
+    "main.js.map": "/recommended/static/js/main.b9143ff3.chunk.js.map",
     "runtime-main.js": "/recommended/static/js/runtime-main.6662832c.js",
     "runtime-main.js.map": "/recommended/static/js/runtime-main.6662832c.js.map",
     "static/js/2.b3601437.chunk.js": "/recommended/static/js/2.b3601437.chunk.js",
     "static/js/2.b3601437.chunk.js.map": "/recommended/static/js/2.b3601437.chunk.js.map",
     "index.html": "/recommended/index.html",
-    "static/css/main.eefc916a.chunk.css.map": "/recommended/static/css/main.eefc916a.chunk.css.map",
+    "static/css/main.62eef966.chunk.css.map": "/recommended/static/css/main.62eef966.chunk.css.map",
     "static/js/2.b3601437.chunk.js.LICENSE.txt": "/recommended/static/js/2.b3601437.chunk.js.LICENSE.txt",
     "static/media/costco-logo.96c6476c.png": "/recommended/static/media/costco-logo.96c6476c.png",
     "static/media/inova-logo.6443f4a4.png": "/recommended/static/media/inova-logo.6443f4a4.png"
@@ -16,7 +16,7 @@
   "entrypoints": [
     "static/js/runtime-main.6662832c.js",
     "static/js/2.b3601437.chunk.js",
-    "static/css/main.eefc916a.chunk.css",
-    "static/js/main.b1780f7a.chunk.js"
+    "static/css/main.62eef966.chunk.css",
+    "static/js/main.b9143ff3.chunk.js"
   ]
 }
